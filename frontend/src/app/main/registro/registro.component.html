@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8" />
+    <title>SmartParking</title>
+    <style type="text/css">
+        /* Características generales de la página */
+
+        body {
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            background: #AAA;
+        }
+        /* El contenedor define la zona principal de contenido */
+
+        #contenedor {
+            background: #FFF;
+            margin: 1em auto;
+            padding: 1em;
+            width: 768px;
+        }
+        /* El formulario está definido como una lista */
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        ul li {
+            border-top: 1px solid #CCC;
+            margin: 1em 0;
+            padding: 1em;
+            width: auto;
+            overflow: hidden;
+        }
+        /* El formulario se organiza en dos columnas, el título y los controles */
+
+        ul li label.titulo {
+            float: left;
+            width: 150px;
+            text-align: right;
+        }
+
+        ul li div.controles {
+            margin-left: 160px;
+        }
+        /* El último elemento del formulario es el botón "Registrarse" */
+
+        ul li.botones {
+            border-top: 2px solid #CCC;
+            clear: both;
+            float: none;
+            padding: 1em 0;
+            text-align: right;
+            width: 100%;
+        }
+
+        ul li.botones input {
+            font-size: 18px;
+        }
+        /* El título de los elementos de la lista */
+
+        ul li label.titulo {
+            font-weight: bold;
+        }
+
+        ul li div span {
+            float: left;
+            padding: 0.3em 0;
+        }
+
+        ul li div span.completo {
+            width: 100%;
+        }
+
+        ul li div span.mitad {
+            width: 50%;
+        }
+
+        ul li div span.tercio {
+            width: 33%;
+        }
+
+        ul li div span.dostercios {
+            width: 66%;
+        }
+        /* Como se define display: block, se muestra en la línea siguiente */
+
+        ul li div span label {
+            display: block;
+            font-size: 12px;
+            color: #333;
+        }
+        /* Configuración de los controles del formulario */
+
+        ul li input {
+            padding: 0.2em;
+        }
+
+        input#tipoVehiculo {
+            width: 260px;
+        }
+
+        input#plaza {
+            width: 260px;
+        }
+        /* Cambia el color cuando se sitúa el cursor del ratón */
+
+        ul li:hover {
+            background-color: #FF9;
+        }
+
+        ul li.botones:hover {
+            background-color: transparent;
+        }
+        /* Destaca el control cuando recibe el foco */
+
+        ul li input,
+        ul li select {
+            border: 2px solid transparent;
+            border-bottom: 2px solid black;
+        }
+
+        ul li.botones input {
+            border: 2px solid #CCC;
+        }
+
+        ul li input:focus,
+        ul li select:focus {
+            border: 2px solid #F00;
+        }
+
+        table,
+        td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<table align="center">
+
+    <thead>
+        <tr>
+            <td>placa_vehiculo</td>
+            <td>plaza</td>
+            <td>hora_ingreso</td>
+            <td>hora_salida</td>
+            <td>imagen_vehiculo</td>
+            <td>tipo_vehiculo</td>
+            <td>total_pagar</td>
+
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let registro of listaRegistro">
+
+            <td>{{ registro.placa_vehiculo }}</td>
+            <td>{{ registro.plaza }}</td>
+            <td>{{ registro.hora_ingreso }}</td>
+            <td>{{ registro.hora_salida }}</td>
+            <td>{{ registro.imagen_vehiculo }}</td>
+            <td>{{ registro.tipo_vehiculo }}</td>
+            <td>{{ registro.total_pagar }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<body>
+
+    <div id="contenedor">
+
+        <h1>Registro Vehiculo</h1>
+
+        <form method="post" action="#">
+            <ul>
+                <li>
+                    <label class="titulo" for="placa">Placa Vehiculo</label>
+
+
+                    <div class="controles">
+                        <span class="completo">
+                          <input type="text" name="placa_vehiculo" [(ngModel)]="registro.placa_vehiculo"/>
+    </span>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="titulo" for="hora">Hora de Ingreso</label>
+
+                    <div class="controles">
+                        <span class="completo">
+                          <input type="text" name="hora_ingreso" [(ngModel)]="registro.hora_ingreso"/>
+    </span>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="titulo" for="tipoVehiculo">Tipo Vehiculo</label>
+
+                    <div class="controles">
+                        <span class="completo">
+      <select type="text" name="tipo_vehiculo"[(ngModel)]="registro.tipo_vehiculo">
+        <option selected="selected">Seleccione...</option>
+        <option>Carro</option>
+        <option>Moto</option>
+        <option>Bicicleta</option>
+      </select>
+    </span>
+                    </div>
+                </li>
+
+                <li>
+                    <label class="titulo" for="plaza">Plaza</label>
+
+                    <div class="controles">
+                        <span class="mitad">
+                          <input type="text" name="plaza" [(ngModel)]="registro.plaza"/>
+    </span>
+                    </div>
+                </li>
+                <p align="right">
+
+                    <button (click)="Guardar()">Guardar</button>
+                    <button (click)="LimpiarFormulario()">Limpiar Formulario</button>
+
+                </p>
+
+            </ul>
+        </form>
+
+    </div>
+</body>
+
+</html>
