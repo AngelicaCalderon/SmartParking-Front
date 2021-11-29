@@ -42,6 +42,28 @@ export class RegistroComponent implements OnInit {
 
   }
 
+  Actualizar(){
+
+    this._registroService.actualizar(this.registro).subscribe(
+      data => {
+        this.listarRegistro();
+        this.LimpiarFormulario();
+      }
+    )
+
+  }
+
+  Eliminar(id: string){
+    this._registroService.eliminar(id).subscribe(
+      data => {
+        this.listarRegistro();
+        this.LimpiarFormulario();
+      }
+    )
+  }
+
+
+
   LimpiarFormulario(){
     this.registro = new RegistroTO();
   }

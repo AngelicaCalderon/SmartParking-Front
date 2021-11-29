@@ -167,10 +167,14 @@
             <td>{{ registro.tipo_vehiculo }}</td>
             <td>{{ registro.total_pagar }}</td>
             <td>
-                <button>editar</button>
+                <button (click)="Actualizar">
+                  <img height="20" src="../../../assets/image/pen_pencil_write_edit_icon_185984.png"/>
+                </button>
             </td>
             <td>
-                <button>eliminar</button>
+                <button (click)="Eliminar">
+                  <img height="20" src="../../../assets/image/recycling_recyclebin_empty_delete_trash_1771.png"/>
+                </button>
             </td>
         </tr>
     </tbody>
