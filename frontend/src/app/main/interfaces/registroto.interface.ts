@@ -10,7 +10,7 @@ export interface IRegistroTO{
 }
 
 export class RegistroTO implements IRegistroTO {
-  _id = "";
+  _id = ""
   placa_vehiculo = "";
   plaza = "";
   hora_ingreso = "";
