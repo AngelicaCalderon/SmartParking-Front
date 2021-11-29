@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
-import { PlazasTO } from '../../interfaces/plazasto.interface';
+import { PlazasTO } from '../../../interfaces/plazasto.interface';
 
 
 @Injectable({

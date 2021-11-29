@@ -1,6 +1,6 @@
 import { PlazasService } from './service/plazas.service';
 import { Component, OnInit } from '@angular/core';
-import { PlazasTO } from '../interfaces/plazasto.interface';
+import { PlazasTO } from '../../interfaces/plazasto.interface';
 
 @Component({
   selector: 'app-plazas',

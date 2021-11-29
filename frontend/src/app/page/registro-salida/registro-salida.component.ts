@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistroSalidaService } from './service/registro-salida.service';
-import { RegistroSalidaTO } from '../interfaces/registroSalidato.interface';
+import { RegistroSalidaTO } from '../../interfaces/registroSalidato.interface';
 
 @Component({
   selector: 'app-registro-salida',

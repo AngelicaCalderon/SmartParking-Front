@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ParametrosTO } from '../interfaces/parametrosto.interface';
+import { ParametrosTO } from '../../interfaces/parametrosto.interface';
 import { ParametrosService } from './service/parametros.service';
 
 @Component({

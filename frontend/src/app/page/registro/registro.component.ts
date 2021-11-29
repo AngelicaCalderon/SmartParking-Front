@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { RegistroService } from './service/registro.service';
-import { RegistroTO } from '../interfaces/registroto.interface';
+import { RegistroTO } from '../../interfaces/registroto.interface';
+
 
 @Component({
   selector: 'app-registro',
@@ -33,12 +34,17 @@ export class RegistroComponent implements OnInit {
 
   Guardar(){
 
-    this._registroService.guardar(this.registro).subscribe(
-      data => {
-        this.listarRegistro();
-        this.LimpiarFormulario();
-      }
-    )
+    if (this.registro._id == "") {
+
+      this._registroService.guardar(this.registro).subscribe(
+        data => {
+          this.listarRegistro();
+          this.LimpiarFormulario();
+        }
+      )
+    } else {
+      this.Actualizar();
+    }
 
   }
 
@@ -51,6 +57,10 @@ export class RegistroComponent implements OnInit {
       }
     )
 
+  }
+
+  VerRegitro(pRegistro: RegistroTO){
+    this.registro = pRegistro
   }
 
   Eliminar(id: string){

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, observable } from 'rxjs';
-import { ParametrosTO } from '../../interfaces/parametrosto.interface';
+import { ParametrosTO } from '../../../interfaces/parametrosto.interface';
 
 
 @Injectable({
