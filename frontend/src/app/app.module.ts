@@ -21,13 +21,14 @@ import { RegistroSalidaService } from './page/registro-salida/service/registro-s
 
 @NgModule({
   declarations: [
-    RegistroComponent,
-    PlazasComponent,
-    ParametrosComponent,
-    RegistroSalidaComponent,
+
     AppComponent,
     NavComponent,
-    HomeComponent
+    HomeComponent,
+    ParametrosComponent,
+    PlazasComponent,
+    RegistroComponent,
+    RegistroSalidaComponent
   ],
   imports: [
     BrowserModule,
@@ -38,9 +39,9 @@ import { RegistroSalidaService } from './page/registro-salida/service/registro-s
     FormsModule
   ],
   providers: [
-    RegistroService,
-    PlazasService,
     ParametrosService,
+    PlazasService,
+    RegistroService,
     RegistroSalidaService
   ],
   bootstrap: [AppComponent]

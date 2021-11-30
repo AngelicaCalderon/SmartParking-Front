@@ -1,17 +1,25 @@
-<ul>
-    <li routerLinkActive="active">
-        <a routerLink="page">Home</a>
-    </li>
-    <li routerLinkActive="active">
-        <a routerLink="page">Registro</a>
-    </li>
-    <li routerLinkActive="active">
-        <a routerLink="page">Parametros</a>
-    </li>
-    <li routerLinkActive="active">
-        <a routerLink="page">Plazas</a>
-    </li>
-    <li routerLinkActive="active">
-        <a routerLink="page">Registro Salida</a>
-    </li>
-</ul>
+<style>
+    a {
+        outline: none;
+        text-decoration: none;
+        margin-right: 20%;
+        text-align: center;
+        color: rgb(129, 12, 12);
+        display: block;
+    }
+</style>
+
+
+<a [routerLink]="['home']">Home</a>
+
+
+<a [routerLink]="['registro']">Registro</a>
+
+
+<a [routerLink]="['parametros']">Parametros</a>
+
+
+<a [routerLink]="['plazas']">Plazas</a>
+
+
+<a [routerLink]="['registroSalida']">Registro Salida</a>
