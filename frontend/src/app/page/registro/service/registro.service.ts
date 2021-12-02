@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import { RegistroTO } from '../../../interfaces/registroto.interface';
 
 
+
 @Injectable({
   providedIn: 'root'
 })
