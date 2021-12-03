@@ -3,8 +3,9 @@
 
 <head>
 
+
+
     <meta charset="utf-8" />
-    <title>SmartParking</title>
     <style type="text/css">
         /* Características generales de la página */
         
@@ -137,6 +138,72 @@
         td {
             border: 1px solid black;
         }
+        
+        button {
+            text-decoration: none;
+            padding: 10px;
+            font-weight: 600;
+            font-size: 15px;
+            color: #65a6f0;
+            background-color: #f9f9fa;
+            border-radius: 6px;
+            border: 2px solid #ffffff;
+            border: 5px solid #2e518b;
+        }
+        
+        h1 {
+            color: #6c2eb9;
+            font-weight: normal;
+            font-size: 40px;
+            font-family: Arial;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            color: #3c1b66;
+            font-weight: normal;
+            font-size: 35px;
+            font-family: Arial;
+            text-transform: uppercase;
+        }
+        
+        h3 {
+            color: #65a6f0;
+            font-weight: normal;
+            font-size: 40px;
+            font-family: Arial;
+        }
+        
+        h4 {
+            color: #4f4866;
+            font-weight: normal;
+            font-size: 25px;
+            font-family: Arial;
+            text-transform: lowercase;
+        }
+        
+        h5 {
+            color: #656172;
+            font-weight: normal;
+            font-size: 20px;
+            font-family: Arial;
+            text-transform: lowercase;
+        }
+        
+        h6 {
+            color: #747377;
+            font-weight: normal;
+            font-size: 18px;
+            font-family: Arial;
+            text-transform: lowercase;
+        }
+        
+        label {
+            color: #65a6f0;
+            font-weight: normal;
+            font-size: 18px;
+            font-family: Arial;
+        }
     </style>
 </head>
 
@@ -151,44 +218,41 @@
         <form method="post" action="#">
             <ul>
                 <li>
-                    <label class="titulo" for="placa">Placa Vehiculo</label>
-
-
+                    <label for="placa">Placa Vehiculo</label>
                     <div class="controles">
                         <span class="completo">
                           <input type="text" name="placa_vehiculo" [(ngModel)]="registro.placa_vehiculo"/>
-    </span>
+                        </span>
                     </div>
                 </li>
 
+                <li>
+                    <label for="tipoVehiculo">Tipo Vehiculo</label>
+
+                    <div class="controles">
+                        <span>
+                          <select type="text" name="tipo_vehiculo"[(ngModel)]="registro.tipo_vehiculo">
+                            <option selected="selected">Seleccione...</option>
+                            <option>Carro</option>
+                            <option>Moto</option>
+                            <option>Bicicleta</option>
+                          </select>
+                        </span>
+                    </div>
+                </li>
 
                 <li>
-                    <label class="titulo" for="tipoVehiculo">Tipo Vehiculo</label>
-
+                    <label for="plaza">Plaza</label>
                     <div class="controles">
                         <span class="completo">
-      <select type="text" name="tipo_vehiculo"[(ngModel)]="registro.tipo_vehiculo">
-        <option selected="selected">Seleccione...</option>
-        <option>Carro</option>
-        <option>Moto</option>
-        <option>Bicicleta</option>
-      </select>
-    </span>
-                    </div>
-                </li>
-
-                <li>
-                    <label class="titulo" for="plaza">Plaza</label>
-
-                    <div class="controles">
-                        <span class="mitad">
                           <input type="text" name="plaza" [(ngModel)]="registro.plaza"/>
-    </span>
+                        </span>
                     </div>
                 </li>
+
                 <p>
 
-                    <button (click)="Guardar()">Guardar</button>
+                    <button (click)="Guardar()">Guardar </button>
                     <button (click)="LimpiarFormulario()">Limpiar Formulario</button>
 
                 </p>

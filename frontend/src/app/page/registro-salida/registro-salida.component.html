@@ -4,17 +4,16 @@
 <head>
 
     <meta charset="utf-8" />
-    <title>SmartParking</title>
     <style type="text/css">
         /* Características generales de la página */
-
+        
         body {
             font-size: 14px;
             font-family: Arial, sans-serif;
             background: #AAA;
         }
         /* El contenedor define la zona principal de contenido */
-
+        
         #contenedor {
             background: #FFF;
             margin: 1em auto;
@@ -22,13 +21,13 @@
             width: 768px;
         }
         /* El formulario está definido como una lista */
-
+        
         ul {
             list-style: none;
             margin: 0;
             padding: 0;
         }
-
+        
         ul li {
             border-top: 1px solid #CCC;
             margin: 1em 0;
@@ -37,18 +36,18 @@
             overflow: hidden;
         }
         /* El formulario se organiza en dos columnas, el título y los controles */
-
+        
         ul li label.titulo {
             float: left;
             width: 150px;
             text-align: right;
         }
-
+        
         ul li div.controles {
             margin-left: 160px;
         }
         /* El último elemento del formulario es el botón "Registrarse" */
-
+        
         ul li.botones {
             border-top: 2px solid #CCC;
             clear: both;
@@ -57,85 +56,151 @@
             text-align: right;
             width: 100%;
         }
-
+        
         ul li.botones input {
             font-size: 18px;
         }
         /* El título de los elementos de la lista */
-
+        
         ul li label.titulo {
             font-weight: bold;
         }
-
+        
         ul li div span {
             float: left;
             padding: 0.3em 0;
         }
-
+        
         ul li div span.completo {
             width: 100%;
         }
-
+        
         ul li div span.mitad {
             width: 50%;
         }
-
+        
         ul li div span.tercio {
             width: 33%;
         }
-
+        
         ul li div span.dostercios {
             width: 66%;
         }
         /* Como se define display: block, se muestra en la línea siguiente */
-
+        
         ul li div span label {
             display: block;
             font-size: 12px;
             color: #333;
         }
         /* Configuración de los controles del formulario */
-
+        
         ul li input {
             padding: 0.2em;
         }
-
+        
         input#tipoVehiculo {
             width: 260px;
         }
-
+        
         input#plaza {
             width: 260px;
         }
         /* Cambia el color cuando se sitúa el cursor del ratón */
-
+        
         ul li:hover {
-            background-color: #FF9;
+            background-color: rgb(160, 215, 252);
         }
-
+        
         ul li.botones:hover {
             background-color: transparent;
         }
         /* Destaca el control cuando recibe el foco */
-
+        
         ul li input,
         ul li select {
             border: 2px solid transparent;
             border-bottom: 2px solid black;
         }
-
+        
         ul li.botones input {
             border: 2px solid #CCC;
         }
-
+        
         ul li input:focus,
         ul li select:focus {
             border: 2px solid #F00;
         }
-
+        
         table,
         td {
             border: 1px solid black;
+        }
+        
+        button {
+            text-decoration: none;
+            padding: 10px;
+            font-weight: 600;
+            font-size: 15px;
+            color: #65a6f0;
+            background-color: #f9f9fa;
+            border-radius: 6px;
+            border: 2px solid #ffffff;
+            border: 5px solid #2e518b;
+        }
+        
+        h1 {
+            color: #6c2eb9;
+            font-weight: normal;
+            font-size: 40px;
+            font-family: Arial;
+            text-transform: uppercase;
+        }
+        
+        h2 {
+            color: #3c1b66;
+            font-weight: normal;
+            font-size: 35px;
+            font-family: Arial;
+            text-transform: uppercase;
+        }
+        
+        h3 {
+            color: #65a6f0;
+            font-weight: normal;
+            font-size: 40px;
+            font-family: Arial;
+        }
+        
+        h4 {
+            color: #4f4866;
+            font-weight: normal;
+            font-size: 25px;
+            font-family: Arial;
+            text-transform: lowercase;
+        }
+        
+        h5 {
+            color: #656172;
+            font-weight: normal;
+            font-size: 20px;
+            font-family: Arial;
+            text-transform: lowercase;
+        }
+        
+        h6 {
+            color: #747377;
+            font-weight: normal;
+            font-size: 18px;
+            font-family: Arial;
+            text-transform: lowercase;
+        }
+        
+        label {
+            color: #65a6f0;
+            font-weight: normal;
+            font-size: 18px;
+            font-family: Arial;
         }
     </style>
 </head>
@@ -145,13 +210,13 @@
 
     <div id="contenedor">
 
-        <h1>Registro Salida</h1>
+        <h3>Registro Salida</h3>
 
         <form method="post" action="#">
             <ul>
                 <li>
 
-                    <label class="titulo" for="placa">Placa Vehiculo</label>
+                    <label for="placa">Placa Vehiculo</label>
 
 
                     <div class="controles">
@@ -169,12 +234,12 @@
                 <li>
                     <div class="controles">
                         <p>
-                            <label class="titulo" for="hora">Hora de Ingreso</label>
+                            <label for="hora">Hora de Ingreso</label>
                             <span class="completo">
                           <input type="text" name="hora_ingreso" [(ngModel)]="registroSalida.hora_ingreso"/>
                         </span>
 
-                            <label class="titulo" for="hora">Hora de Salida</label>
+                            <label for="hora">Hora de Salida</label>
                             <span class="completo">
                           <input type="text" name="hora_salida" [(ngModel)]="registroSalida.hora_salida"/>
                         </span>
@@ -184,7 +249,7 @@
                 </li>
 
                 <li>
-                    <label class="titulo" for="tipoVehiculo">Tipo Vehiculo</label>
+                    <label for="tipoVehiculo">Tipo Vehiculo</label>
 
                     <div class="controles">
                         <span class="completo">
@@ -194,7 +259,7 @@
                 </li>
 
                 <li>
-                    <label class="titulo" for="plaza">Plaza</label>
+                    <label for="plaza">Plaza</label>
 
                     <div class="controles">
                         <span class="mitad">
@@ -205,7 +270,7 @@
                 </li>
 
                 <li>
-                    <label class="titulo" for="pagar">Total a pagar</label>
+                    <label for="pagar">Total a pagar</label>
 
                     <div class="controles">
                         <span class="mitad">
