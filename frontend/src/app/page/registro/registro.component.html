@@ -161,7 +161,7 @@
                     </div>
                 </li>
 
-                <li>
+                <!-- <li>
                     <label class="titulo" for="hora">Hora de Ingreso</label>
 
                     <div class="controles">
@@ -169,7 +169,7 @@
                           <input type="text" name="hora_ingreso" [(ngModel)]="registro.hora_ingreso"/>
     </span>
                     </div>
-                </li>
+                </li> -->
 
                 <li>
                     <label class="titulo" for="tipoVehiculo">Tipo Vehiculo</label>
@@ -217,11 +217,12 @@
             <td>plaza</td>
             <td>hora_ingreso</td>
             <td>hora_salida</td>
-            <td>imagen_vehiculo</td>
+            <!--<td>imagen_vehiculo</td>-->
             <td>tipo_vehiculo</td>
             <td>total_pagar</td>
             <td>editar</td>
             <td>eliminar</td>
+            <td>facturar</td>
 
         </tr>
     </thead>
@@ -232,7 +233,7 @@
             <td>{{ registro.plaza }}</td>
             <td>{{ registro.hora_ingreso }}</td>
             <td>{{ registro.hora_salida }}</td>
-            <td>{{ registro.imagen_vehiculo }}</td>
+            <!-- <td>{{ registro.imagen_vehiculo }}</td> -->
             <td>{{ registro.tipo_vehiculo }}</td>
             <td>{{ registro.total_pagar }}</td>
             <td>
@@ -244,6 +245,11 @@
                 <button (click)="Eliminar(registro._id)">
                 <img height="20" src="../../../assets/image/recycling_recyclebin_empty_delete_trash_1771.png"/>
               </button>
+            </td>
+            <td>
+                <button (click)="Actualizar()">
+              <img height="20" src="../../../assets/image/recycling_recyclebin_empty_delete_trash_1771.png"/>
+            </button>
             </td>
         </tr>
     </tbody>

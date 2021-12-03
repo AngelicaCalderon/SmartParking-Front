@@ -1,6 +1,9 @@
+import { ParametrosTO } from './../../interfaces/parametrosto.interface';
 import { Component, OnInit } from '@angular/core';
 import { RegistroService } from './service/registro.service';
 import { RegistroTO } from '../../interfaces/registroto.interface';
+import { ParametrosService } from '../parametros/service/parametros.service';
+import { DatePipe } from '@angular/common';
 
 
 @Component({
@@ -30,25 +33,22 @@ export class RegistroComponent implements OnInit {
   Guardar(){
 
     if (this.registro._id == "") {
-
       this._registroService.guardar(this.registro).subscribe(
         data => {
           this.listarRegistro();
-          this.LimpiarFormulario();
         }
       )
-    } else {
-      this.Actualizar();
     }
-
+      else {
+       this.Actualizar();
+     }
+    this.LimpiarFormulario();
   }
 
   Actualizar(){
-
     this._registroService.actualizar(this.registro).subscribe(
       data => {
-        this.listarRegistro();
-        this.LimpiarFormulario();
+         this.listarRegistro();
       }
     )
 
@@ -67,9 +67,8 @@ export class RegistroComponent implements OnInit {
     )
   }
 
-
-
   LimpiarFormulario(){
     this.registro = new RegistroTO();
   }
+
 }
